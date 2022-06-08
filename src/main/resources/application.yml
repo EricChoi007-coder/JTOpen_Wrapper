@@ -1,0 +1,21 @@
+opentracing:
+  jaeger:
+    service-name: AS400-Wrapper
+    enabled: false
+    udp-sender:
+      host: jaeger
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - beans
+          - metrics
+
+jwt:
+  header: "Authorization" #token返回头部
+  tokenPrefix: "Bearer " #token前缀
+  secret: "qwertyuiop7418520" #密钥
+  expireTime: 30000000 #token有效时间 (分钟)
+
